@@ -1,15 +1,15 @@
-# gulp-string-replace [![NPM version][npm-image]][npm-url] [![Build status][travis-image]][travis-url] [![dependencies][gulp-string-replace-dependencies-image]][gulp-string-replace-dependencies-url]
+# gulp-version-tool [![NPM version][npm-image]][npm-url] [![Build status][travis-image]][travis-url] [![dependencies][gulp-string-replace-dependencies-image]][gulp-string-replace-dependencies-url]
 > Replaces strings in files by using string or regex patterns. Works with Gulp 3!
 
 ## Usage
 
 ```shell
-npm install gulp-string-replace --save-dev
+npm install gulp-version-tool --save-dev
 ```
 ### Regex Replace
 ```javascript
-var replace = require('gulp-string-replace');
-
+var replace = require('gulp-version-tool');
+var json_ed = require('gulp-version-tool/src/json_edit');
 gulp.task('replace_1', function() {
   gulp.src(["./config.js"]) // Any file globs are supported
     .pipe(replace(new RegExp('@env@', 'g'), 'production'))

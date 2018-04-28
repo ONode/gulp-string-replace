@@ -1,41 +1,35 @@
 {
-  "name": "gulp-string-replace",
-  "version": "1.0.0",
-  "homepage": "https://github.com/tomaszczechowski/gulp-string-replace#readme",
+  "name": "gulp-version-tool",
+  "version": "1.1.6",
+  "homepage": "https://github.com/ONode/gulp-version-tool#readme",
   "description": "Replace strings in files by using string or regex patterns.",
   "main": "index.js",
   "author": {
-    "name": "Tomasz Czechowski",
-    "url": "http://www.czechowski.pl"
+    "name": "Tomasz Czechowski|jjhesk",
+    "url": "http://www.czechowski.pl|http://biz.heskeyo.com"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tomaszczechowski/gulp-string-replace.git"
+    "url": "git+https://github.com/ONode/gulp-version-tool.git"
   },
-  "keywords": [
-    "gulp",
-    "gulp",
-    "replace",
-    "gulp",
-    "string",
-    "replace",
-    "gulp",
-    "replace",
-    "string",
-    "gulp replace",
-    "gulp replace string",
-    "gulp string replace"
-  ],
+  "scripts": {
+    "test": "node ./node_modules/gulp/bin/gulp.js autoversion"
+  },
+  "keywords": ["gulp", "gulp", "replace", "gulp", "string", "replace", "gulp", "replace", "string", "gulp replace", "gulp replace string", "gulp string replace"],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tomaszczechowski/gulp-string-replace/issues"
+    "url": "https://github.com/ONode/gulp-version-tool/issues"
   },
   "dependencies": {
     "chalk": "^2.3.0",
+    "deepmerge": "^2.1.0",
+    "detect-indent": "^5.0.0",
     "extend": "^3.0.0",
     "fancy-log": "^1.3.2",
-    "plugin-error": "^0.1.2",
+    "js-beautify": "^1.7.5",
+    "plugin-error": "^1.0.1",
     "replacestream": "^4.0.0",
-    "through2": "^2.0.1"
+    "run-sequence": "^2.2.1",
+    "through2": "^2.0.3"
   }
 }
