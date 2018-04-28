@@ -6,9 +6,45 @@
 ```shell
 npm install gulp-version-tool --save-dev
 ```
+
+```javascript
+
+const gulp = require ("gulp");
+const runSequence = require ("run-sequence"); // Run tasks sequentially
+const jsEditor = require ("./src/json_edit");
+const versionPump = require ("./src/version_pump");
+const replace = require ("./src/replace");
+
+gulp.task ("upversion", function () {
+    let ver = require ("./package.json").version;
+    //version defined in the package.json file
+    console.log ("current version: ", ver);
+    process.env.VERSION = versionPump (ver);
+    console.log (process.env.VERSION);
+});
+gulp.task ("saveversion", function () {
+    return gulp.src ("./package.json")
+        .pipe (jsEditor (function (json) {
+            json.version = process.env.VERSION;
+            return json; // must return JSON object.
+        }))
+        .pipe (gulp.dest ("."));
+
+});
+gulp.task ("version_up", function () {
+    gulp.src (["./example/version.ts"])
+        .pipe (replace (/(\d+)\.(\d+)(?:\.(\d+))?(?:\-(\w+))?/, process.env.VERSION))
+        .pipe (gulp.dest ("./example/newv"))
+});
+gulp.task ("autoversion", function () {
+    // runSequence ("upversion", "version_up", "saveversion");
+    runSequence ("upversion", "version_up", "saveversion");
+});
+```
+
 ### Regex Replace
 ```javascript
-var replace = require('gulp-version-tool');
+var replace = require('gulp-version-tool/src/replace');
 var json_ed = require('gulp-version-tool/src/json_edit');
 gulp.task('replace_1', function() {
   gulp.src(["./config.js"]) // Any file globs are supported
