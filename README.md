@@ -7,6 +7,7 @@
 npm install gulp-version-tool --save-dev
 ```
 
+Plays well in your gulptask file.
 ```javascript
 
 const gulp = require ("gulp");
@@ -142,6 +143,7 @@ Displaying "not replaced" logs.
 More details here: [MDN documentation for RegExp] and [MDN documentation for String.replace].
 
 ### Release History
+ * 2018-05-01  v1.1.7  Fully released for node 8+, version number pump tool for automatic workflow
  * 2017-12-31  v1.0.0  Removed a gulp-util, clean up and released v1.0.0
  * 2017-11-19  v0.4.0  Passed entire regex outcome to replace function.
  * 2017-01-04  v0.3.1  Improved documentation. Removed duplicated comments & Fixed typo.
@@ -150,7 +152,7 @@ More details here: [MDN documentation for RegExp] and [MDN documentation for Str
  * 2016-09-09  v0.1.1  Reorganization of files along with minor cosmetic changes.
  * 2016-03-09  v0.1.0  Initial version of plugin.
 
-Task submitted by [Tomasz Czechowski](http://czechowski.pl/). License MIT.
+Task submitted by [jjHesk](http://biz.heskeyo.com/). License MIT.
 
 [MDN documentation for RegExp]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp
 [MDN documentation for String.replace]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace#Specifying_a_string_as_a_parameter
